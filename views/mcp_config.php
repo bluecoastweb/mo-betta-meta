@@ -26,39 +26,6 @@ $prefix = $channel.$config['field_name_prefix'];
 
 ?>
 
-<h3>Instructions</h3>
-
-<p>
-To override the default value for a schema tag:
-<ol>
-  <li>Create a custom channel field for the tag (in one or more channels)</li>
-  <li>Name the field in such a way that it can be uniquely identified by <?=$mbm?></li>
-</ol>
-</p>
-
-<p>
-A <?=$mbm?>-enabled custom field name will typically be composed of three parts:
-<ol>
-  <li>Short name of the channel, eg <b><?=$channel?></b>. This satisfies an EE constraint, ensuring that the field name will be unique across all channels.</li>
-  <li>A site-wide <?=$mbm?> marker, eg <b><?=$config['field_name_prefix']?></b>. This enables <?=$mbm?> to identify the field.</li>
-  <li>One of the several <?=$mbm?> platform suffixes, eg, <b><?=$config['so_name']?></b>. This enables <?=$mbm?> to identify the platform and tag.</li>
-</ol>
-</p>
-
-<p>
-For example, to override the default value of the <i>Schema.org</i> <b>name</b> tag for one or more entries of a channel named <b><?=$channel?></b>, create a new custom channel field in the <b><?=$channel?></b> channel field group with the following:
-<ul>
-  <li>Field Type: <b>Text Input</b></li>
-  <li>Field Name: <b><?=$prefix?><?=$config['so_name']?></b></li>
-</ul>
-</p>
-
-<p>
-Then in Publish page for each <b>blog</b> entry, simply add your override text in the custom channel field provided.
-</p>
-
-<br><br>
-
 <?=form_open($action_url, '', $form_hidden)?>
 <table class="mainTable" border="0" cellspacing="0" cellpadding="0">
   <tbody>
