@@ -10,12 +10,14 @@
 
 </style>
 
-The tag <b>name</b> or <b>property</b> is listed in the left-hand column, 
-while the right-hand column above describes the logic used to populate that tag's <b>content</b> or <b>value</b>. 
+<ul>
+  <li>The <b>left column</b> identifies the schema tag <i>name</i> or <i>property</i></li>
+  <li>
+    The <b>right column</b> describes the logic used to populate that tag's <i>content</i> or <i>value</i>. 
+    <br>
+    If no content can be obtained from the primary, left-most source, then the source immediately to the right is attempted, and so on.
+  </li>
 <br>
-If no content can be obtained from the primary, left-most source, then the source immediately to the right is attempted.
-<br>
-And so on, until the final, right-most source which is guaranteed&trade; to provide a generalized, default value.
 <br>
 <br>
 

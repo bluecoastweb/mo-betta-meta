@@ -12,7 +12,7 @@
 
 <h3>Purpose</h3>
 
-Render schema tags for the following social media platforms:
+Render schema tags for these social media platforms:
 
 <ul>
   <li>Schema.org</li>
@@ -24,10 +24,10 @@ Render schema tags for the following social media platforms:
 
 <h3>Dependencies</h3>
 
-<ol>
+<ul>
   <li>EE2</li>
   <li>NSM Better Meta</li>
-</ol>
+</ul>
 
 <br>
 

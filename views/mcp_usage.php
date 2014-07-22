@@ -18,7 +18,7 @@ $prefix = $channel.$config['field_name_prefix'];
 
 ?>
 
-<h3>Template Tag</h3>
+<h3>Add <tt>mo_betta_meta</tt> tag to EE Template</h3>
 
 Add the following to a template:
 
@@ -34,7 +34,7 @@ Add the following to a template:
 
 <br>
 
-<h3>Override Defaults</h3>
+<h3>Override schema tag defaults</h3>
 
 <p>
 To override the default value for a <?=$mbm?> schema tag:
