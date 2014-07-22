@@ -1,4 +1,4 @@
-mo-betta-meta
+mo_betta_meta
 =============
 
 ExpressionEngine module to render schema tags for the following social media platforms:
