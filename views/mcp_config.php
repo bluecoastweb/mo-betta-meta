@@ -32,29 +32,29 @@ $prefix = $channel.$config['field_name_prefix'];
 To override the default value for a schema tag:
 <ol>
   <li>Create a custom channel field for the tag (in one or more channels)</li>
-  <li>Name the field in such a way that it can be uniquely identified by Mo Betta Meta</li>
+  <li>Name the field in such a way that it can be uniquely identified by <?=$mbm?></li>
 </ol>
 </p>
 
 <p>
 A <?=$mbm?>-enabled custom field name will typically be composed of three parts:
 <ol>
-  <li>Short name of the channel, eg <b><?=$channel?></b>. This satisfies the EE unique constraint.</li>
+  <li>Short name of the channel, eg <b><?=$channel?></b>. This satisfies an EE constraint, ensuring that the field name will be unique across all channels.</li>
   <li>A site-wide <?=$mbm?> marker, eg <b><?=$config['field_name_prefix']?></b>. This enables <?=$mbm?> to identify the field.</li>
-  <li>One of the several Mo Betta Meta platform suffixes, eg, <b><?=$config['so_name']?></b>. This enables <?=$mbm?> to identify the platform and tag.</li>
+  <li>One of the several <?=$mbm?> platform suffixes, eg, <b><?=$config['so_name']?></b>. This enables <?=$mbm?> to identify the platform and tag.</li>
 </ol>
 </p>
 
 <p>
-For example, to override the default value of the <b>Schema.org <i>name</i></b> tag for one or more entries of a channel named <b><?=$channel?></b>, create a new custom channel field in the <b><?=$channel?></b> channel field group with the following:
+For example, to override the default value of the <i>Schema.org</i> <b>name</b> tag for one or more entries of a channel named <b><?=$channel?></b>, create a new custom channel field in the <b><?=$channel?></b> channel field group with the following:
 <ul>
-  <li>Field Type: <b>Text Input</b> <i>or</i> <b>Select Dropdown</b></li>
+  <li>Field Type: <b>Text Input</b></li>
   <li>Field Name: <b><?=$prefix?><?=$config['so_name']?></b></li>
 </ul>
 </p>
 
 <p>
-Then in <tt>New/Edit Entry</tt> page for each <b>blog</b> entry, simply add your override text in the custom channel field provided.
+Then in Publish page for each <b>blog</b> entry, simply add your override text in the custom channel field provided.
 </p>
 
 <br><br>
@@ -63,7 +63,7 @@ Then in <tt>New/Edit Entry</tt> page for each <b>blog</b> entry, simply add your
 <table class="mainTable" border="0" cellspacing="0" cellpadding="0">
   <tbody>
     <tr class="">
-      <th colspan="2">Site-wide channel field name marker</th>
+      <th colspan="2">Site-wide field name marker</th>
     </tr>
      <tr>
       <td><b>Field name marker</b> <small>prefixed to the suffixes below</small></td>
@@ -115,10 +115,10 @@ Then in <tt>New/Edit Entry</tt> page for each <b>blog</b> entry, simply add your
       <td class="input-text"><?=$prefix?> <input type="text" name="og_image" value="<?=$config['og_image']?>"></td>
     </tr>
     <tr class="">
-      <th colspan="2">General field name suffixes</th>
+      <th colspan="2">Cross-platform field name suffix</th>
     </tr>
     <tr>
-      <td><b>Page type</b></tt></td>
+      <td><b>Page type</b> <small>distinguish article from video</small></td>
       <td class="input-text"><?=$prefix?> <input type="text" name="page_type" value="<?=$config['page_type']?>"></td>
     </tr>
     <tr class="">
@@ -126,7 +126,7 @@ Then in <tt>New/Edit Entry</tt> page for each <b>blog</b> entry, simply add your
     </tr>
     <tr>
     <tr>
-      <td><b>Image</b> <small>relative URL path</small></td>
+      <td><b>Image</b> <small>relative path, combined with site URL</small></td>
       <td class="input-text">http://<?=$_SERVER['HTTP_HOST']?>/ <input type="text" name="default_image" value="<?=$config['default_image']?>"></td>
     </tr>
       <td><b>Page type</b></td>

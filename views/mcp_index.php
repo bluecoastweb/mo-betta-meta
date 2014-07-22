@@ -1,12 +1,11 @@
 <style>
 
 .pageContents ol, .pageContents ul {
-  margin: 10px 0 10px 20px;
+  margin: 10px 0 10px 10px;
 }
 
 .pageContents ol li,.pageContents ul li {
   margin: 5px 0 5px 15px;
-  font-weight: bold;
 }
 
 </style>
@@ -39,7 +38,7 @@ foreach($platforms as $name => $tags) {
     } elseif ($tag == 'image') {
       $order = "$custom_field $overrides $default_image";
     } elseif ($tag == 'url') {
-      $order = "$nbm canonical URL $overrides Structure page URL";
+      $order = "$nbm canonical URL $overrides EE page URL";
     } else {
       $order = '';
     }
@@ -56,8 +55,17 @@ Note the right-hand column above describes the logic used to populate the meta t
 <br>
 If no content can be obtained from the primary, left-most source, then the source immediately to the right is attempted.
 <br>
-And so on, until the final, right-most source which is guaranteed&trade; to provide a general, default value.
+And so on, until the final, right-most source which is guaranteed&trade; to provide a generalized, default value.
 <br><br>
+
+<h3>Dependencies</h3>
+
+<ol>
+  <li>EE2</li>
+  <li>NSM Better Meta</li>
+</ol>
+
+<br>
 
 <h3>Usage</h3>
 
@@ -73,7 +81,12 @@ Add the following to a template:
 &lt;/head&gt;
 </pre>
 
+<br>
+
 <h3>Configuration</h3>
 
-<h4><a href='<?=$config_url?>'>Edit</a></h4>
+<ul>
+  <li><a href='<?=$config_url?>'><b>Edit</b></a></li>
+</ul>
+
 
