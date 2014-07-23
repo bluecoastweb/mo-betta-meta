@@ -88,7 +88,8 @@ class Mo_betta_meta_mcp {
                 'title',
                 'description',
                 'image',
-                'url'
+                'url',
+                'site_name'
             ),
         );
         $vars['home_url'] = $this->base_url;

@@ -26,6 +26,7 @@
 
 $mbm = 'Mo Betta Meta';
 $nbm = 'NSM Better Meta';
+$ee = 'ExpressionEngine';
 $custom_field = "<a href='$config_url'>$mbm custom field value</a>";
 $default_image = "<a href='$config_url'>$mbm default image</a>";
 $default_page_type = "<a href='$config_url'>$mbm default page type</a>";
@@ -44,7 +45,9 @@ foreach($platforms as $name => $tags) {
     } elseif ($tag == 'image') {
       $order = "$custom_field $overrides $default_image";
     } elseif ($tag == 'url') {
-      $order = "$nbm canonical URL $overrides EE page URL";
+      $order = "$nbm canonical URL $overrides $ee page URL";
+    } elseif ($tag == 'site_name') {
+      $order = "$nbm default site title $overrides $ee site name";
     } else {
       $order = '';
     }

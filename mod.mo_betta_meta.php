@@ -81,12 +81,12 @@ class Mo_betta_meta {
         $tw_description = $this->_description($this->settings['tw_description'], $entry_id);
         $tw_image = $this->_image($this->settings['tw_image'], $entry_id);
 
-        $og_site_name = $this->ee->config->config['site_name'];
         $og_type = $this->_og_type($entry_id);
         $og_title = $this->_title($this->settings['og_title'], $entry_id);
         $og_description = $this->_description($this->settings['og_description'], $entry_id);
         $og_image = $this->_image($this->settings['og_image'], $entry_id);
         $og_url = $this->_canonical_url($entry_id);
+        $og_site_name = $this->_site_name();
 
         $html = <<<HTML
 <meta itemprop="name" content="$so_name" />
@@ -117,34 +117,36 @@ HTML;
      * Return Title for entry
      */
     private function _title($type, $entry_id = null) {
-        if (! $entry_id) {
-            return $this->_nsm_default_title();
+        if ($entry_id) {
+            if ($value = $this->_custom_field($entry_id, $type)) {
+                return $value;
+            }
+
+            if ($value = $this->_nsm_entry_value($entry_id, 'title')) {
+                return $value;
+            }
+
+            return $this->_channel_title($entry_id);
         }
 
-        if ($value = $this->_custom_field($entry_id, $type)) {
-            return $value;
-        }
-
-        if ($value = $this->_nsm_entry_value($entry_id, 'title')) {
-            return $value;
-        }
-
-        return $this->_channel_title($entry_id);
+        return $this->_nsm_default_title();
     }
 
     /**
      * Return Description for entry
      */
     private function _description($type, $entry_id = null) {
-        if (! $entry_id) {
-            return $this->_nsm_default_description();
+        if ($entry_id) {
+            if ($value = $this->_custom_field($entry_id, $type)) {
+                return $value;
+            }
+
+            if ($value = $this->_nsm_entry_value($entry_id, 'description')) {
+                return $value;
+            }
         }
 
-        if ($value = $this->_custom_field($entry_id, $type)) {
-            return $value;
-        }
-
-        return $this->_nsm_entry_value($entry_id, 'description');
+        return $this->_nsm_default_description();
     }
 
     /**
@@ -198,6 +200,17 @@ HTML;
         }
 
         return current_url();
+    }
+
+    /**
+     * Return site name
+     */
+    private function _site_name() {
+        if ($value = $this->_nsm_default_title()) {
+            return $value;
+        } else {
+            return $this->ee->config->config['site_name'];
+        }
     }
 
     /**
