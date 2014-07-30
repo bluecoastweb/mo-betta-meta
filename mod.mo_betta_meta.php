@@ -195,11 +195,18 @@ HTML;
     private function _canonical_url($entry_id = null) {
         if ($entry_id) {
             if ($value = $this->_nsm_entry_value($entry_id, 'canonical_url')) {
-                return $value;
+                return $this->_ensure_terminal_slash($value);
             }
         }
 
-        return current_url();
+        return $this->_ensure_terminal_slash(current_url());
+    }
+
+    /**
+     * Return URL with a terminal slash
+     */
+    private function _ensure_terminal_slash($url) {
+        return substr($url, strlen($url) - 1) == '/' ? $url : $url.'/';
     }
 
     /**
