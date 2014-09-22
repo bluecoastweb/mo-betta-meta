@@ -25,7 +25,7 @@
  */
 class Mo_betta_meta_upd {
 
-    public $version = '1.0';
+    public $version = '1.1';
     private $ee;
     private $site_id;
 
