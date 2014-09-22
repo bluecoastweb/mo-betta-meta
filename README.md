@@ -26,7 +26,7 @@ ExpressionEngine module to render schema tags for the following social media pla
 
 ### Usage
 
-1. Download and copy to `system/admin/expressionengine/third_party`
+1. Download and copy `system/expressionengine/third_party/mo_betta_meta` to `<system-dir>/expressionengine/third_party`
 2. Install from `Add-Ons >> Modules`
 3. Configure from `Add-ons >> Modules >> Mo Betta Meta Tags`
 4. Add tag to template(s)
