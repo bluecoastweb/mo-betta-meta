@@ -55,7 +55,11 @@ class Mo_betta_meta_mcp {
      * @return   void
      */
     public function index() {
-        $this->ee->cp->set_variable('cp_page_title', lang('mcp_title_home'));
+        if (version_compare(APP_VER, '2.6', '<')) {
+            $this->ee->cp->set_variable('cp_page_title', lang('mcp_title_home'));
+        } else {
+            $this->ee->view->cp_page_title = lang('mcp_title_home');
+        }
         $vars = array();
         $vars['usage_url'] = $this->base_url.AMP.'method=usage';
         $vars['tags_url'] = $this->base_url.AMP.'method=tags';
@@ -69,7 +73,11 @@ class Mo_betta_meta_mcp {
      * @return   void
      */
     public function tags() {
-        $this->ee->cp->set_variable('cp_page_title', lang('mcp_title_tags'));
+        if (version_compare(APP_VER, '2.6', '<')) {
+            $this->ee->cp->set_variable('cp_page_title', lang('mcp_title_tags'));
+        } else {
+            $this->ee->view->cp_page_title = lang('mcp_title_tags');
+        }
         $vars = array();
         $vars['platforms'] = array(
             'Schema.org' => array(
@@ -105,7 +113,11 @@ class Mo_betta_meta_mcp {
      * @return   void
      */
     public function usage() {
-        $this->ee->cp->set_variable('cp_page_title', lang('mcp_title_usage'));
+        if (version_compare(APP_VER, '2.6', '<')) {
+            $this->ee->cp->set_variable('cp_page_title', lang('mcp_title_usage'));
+        } else {
+            $this->ee->view->cp_page_title = lang('mcp_title_usage');
+        }
         $vars['home_url'] = $this->base_url;
         $vars['tags_url'] = $this->base_url.AMP.'method=tags';
         $vars['config_url'] = $this->base_url.AMP.'method=config';
@@ -119,7 +131,11 @@ class Mo_betta_meta_mcp {
      * @return   void
      */
     public function config() {
-        $this->ee->cp->set_variable('cp_page_title', lang('mcp_title_config'));
+        if (version_compare(APP_VER, '2.6', '<')) {
+            $this->ee->cp->set_variable('cp_page_title', lang('mcp_title_config'));
+        } else {
+            $this->ee->view->cp_page_title = lang('mcp_title_config');
+        }
         $this->ee->load->library('table');
         $this->ee->load->helper('form');
         $vars['action_url'] = $this->base_path.AMP.'method=update';
