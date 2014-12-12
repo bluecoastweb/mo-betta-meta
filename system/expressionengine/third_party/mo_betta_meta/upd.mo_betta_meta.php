@@ -71,13 +71,13 @@ SQL;
             'log_template'      => 'n',
             'page_type'         => '_page_type',
             'og_title'          => '_og_title',
-            'og_description'    => '_og_description',
+            'og_description'    => '_og_desc',
             'og_image'          => '_og_image',
             'so_name'           => '_so_name',
-            'so_description'    => '_so_description',
+            'so_description'    => '_so_desc',
             'so_image'          => '_so_image',
             'tw_title'          => '_tw_title',
-            'tw_description'    => '_tw_description',
+            'tw_description'    => '_tw_desc',
             'tw_image'          => '_tw_image',
         );
         foreach($default_config as $var => $value) {
