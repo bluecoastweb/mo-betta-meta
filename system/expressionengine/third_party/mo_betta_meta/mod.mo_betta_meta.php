@@ -232,7 +232,24 @@ HTML;
     }
 
     /**
-     * Return custom field id for entry and field name pattern
+     * Return the id of a custom field for an entry matching a pattern in the name of the field.
+     *
+     * For example, given:
+     *
+     *      a field name pattern of "_meta_og_title"
+     *
+     * and:
+     *
+     *      a field named "blog_meta_og_title" exists in the custom fields of the channel of the entry
+     *
+     * then:
+     *
+     *      the id of that custom field is returned
+     *
+     * Note: only the pattern is matched to (the suffix of) the custom field name;
+     * the prefix of the field name (e.g., the short name of the channel itself) is ignored.
+     *
+     * This is possible because only the cutom fields of the entry's channel are searched.
      */
     private function _custom_field_id($entry_id, $field_name_suffix) {
         // $partial_name = '_meta_og_title';
@@ -248,7 +265,7 @@ HTML;
     }
 
     /**
-     * Return array of custom field names for entry
+     * Return array of custom field names of the channel for a given entry
      */
     private function _custom_field_names($entry_id) {
         $cache_key = "custom_field_names_$entry_id";
@@ -295,7 +312,7 @@ SQL;
     }
 
     /**
-     * Return array of custom field values for entry
+     * Return array of all the custom field values for a given entry
      */
     private function _custom_field_values($entry_id) {
         $cache_key = "custom_field_values_$entry_id";
